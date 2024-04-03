@@ -1,0 +1,183 @@
+// Douglas de Sousa Silva
+// Turma 1NE - Senac
+
+import java.util.Scanner;
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.InputMismatchException;
+import java.util.Timer;
+
+public class Exercicio06 {
+   
+    public static void main(String[] args) {
+        
+        NumberFormat defaultFormat = NumberFormat.getCurrencyInstance();
+        Locale brasil = new Locale("pt", "BR");
+        NumberFormat brasilFormat = NumberFormat.getCurrencyInstance(brasil);
+        
+        
+        Scanner ler = new Scanner(System.in);
+        
+        double valorCachorroQuente = 1.20;
+        double valorBauruSimples = 1.30;
+        double valorBauruComOvo = 1.50;
+        double valorHamburguer = 1.20;
+        double valorCheeseBurguer = 1.30;
+        double valorRefrigerante = 1.00;
+        
+        double resultadoCachorroQuente = 0;
+        double resultadoBauruSimples = 0;
+        double resultadoBauruComOvo = 0;
+        double resultadoHamburguer = 0;
+        double resultadoCheeseBurguer = 0;
+        double resultadoRefrigerante = 0;
+        
+        double unidadeCachorroQuente = 0;
+        double unidadeBauruSimples = 0;
+        double unidadeBauruComOvo = 0;
+        double unidadeHamburguer = 0;
+        double unidadeCheeseBurguer = 0;
+        double unidadeRefrigerante = 0;
+        
+        double resultadoPedido = 0;
+        
+        boolean x = true;
+       
+        while (x) {
+        
+            try {
+                
+        System.out.println("====== Digite o código do produto desejado: ======");
+        System.out.println();
+        System.out.println("Código (100) - Cachorro Quente");
+        System.out.println("Código (101) - Bauru Simples");
+        System.out.println("Código (102) - Bauru com Ovo");
+        System.out.println("Código (103) - Hambúrguer");
+        System.out.println("Código (104) - Cheeseburguer");
+        System.out.println("Código (105) - Refrigerante");
+        System.out.println("Código (106) - Finalizar Pedido!");
+        System.out.println();
+        
+        
+        int escolha = ler.nextInt();
+        
+        if (escolha == 106){
+            
+            System.out.println(" === Pedido Finalizado! === ");
+            System.out.println();
+            
+            if(resultadoCachorroQuente>0){
+            System.out.printf("%.0f un - Cachorro Quente,", (unidadeCachorroQuente));
+            System.out.println(" no valor de " + brasilFormat.format(resultadoCachorroQuente));
+            }
+            
+            if(resultadoBauruSimples>0){
+            System.out.printf("%.0f un - Bauru Simples,", (unidadeBauruSimples));
+            System.out.println(" no valor de " + brasilFormat.format(resultadoBauruSimples));
+            }
+            
+            if(resultadoBauruComOvo>0){
+            System.out.printf("%.0f un - Bauru com Ovo,", (unidadeBauruComOvo));
+            System.out.println(" no valor de " + brasilFormat.format(resultadoBauruComOvo));
+            }
+            
+            if(resultadoHamburguer>0){
+            System.out.printf("%.0f un - Hambúrguer,", (unidadeHamburguer));
+            System.out.println(" no valor de " + brasilFormat.format(resultadoHamburguer));
+            }
+            
+            if(resultadoCheeseBurguer>0){
+            System.out.printf("%.0f un - Cheeseburguer,", (unidadeCheeseBurguer));
+            System.out.println(" no valor de " + brasilFormat.format(resultadoCheeseBurguer));
+            }
+            
+            if(resultadoRefrigerante>0){
+            System.out.printf("%.0f un - Refrigerante,", (unidadeRefrigerante));
+            System.out.println(" no valor de " + brasilFormat.format(resultadoRefrigerante));
+            }
+            
+            double pedidoFinalizado = resultadoCachorroQuente+resultadoBauruSimples+resultadoBauruComOvo+resultadoHamburguer+resultadoCheeseBurguer+resultadoRefrigerante;
+            
+            System.out.println();
+            System.out.println("Total do pedido: " + brasilFormat.format(pedidoFinalizado));
+            break;
+            
+        }else{    
+        
+            switch(escolha){
+            
+            case 100: System.out.println("01 - Cachorro quente custa R$ 1,20, quantos você deseja?");
+                        unidadeCachorroQuente += ler.nextInt();
+                        
+                        if(unidadeCachorroQuente>0){
+                        resultadoCachorroQuente = unidadeCachorroQuente * valorCachorroQuente;
+                        }
+            break;
+           
+            case 101: System.out.println("01 - Bauru Simples custa R$ 1,30, quantos você deseja?");
+                        unidadeBauruSimples += ler.nextInt();
+                        
+                        if(unidadeBauruSimples>0){
+                        resultadoBauruSimples = unidadeBauruSimples * valorBauruSimples;
+                    }
+                        else{
+                              System.out.println("Digite um número válido!");
+                    }
+            break;
+           
+            case 102: System.out.println("01 - Bauru com Ovo custa R$ 1,50, quantos você deseja?");
+                        unidadeBauruComOvo += ler.nextInt();
+                        
+                        if(unidadeBauruComOvo>0){
+                        resultadoBauruComOvo = unidadeBauruComOvo * valorBauruComOvo;
+                    }
+                        else{
+                            System.out.println("Digite um número válido!");
+                    }
+            break;
+            
+            case 103: System.out.println("01 - Hambúrguer custa R$ 1,20, quantos você deseja?");
+                        unidadeHamburguer += ler.nextInt();
+                        
+                        if(unidadeHamburguer>0){
+                        resultadoHamburguer = unidadeHamburguer * valorHamburguer;
+                    }
+                        else{
+                            System.out.println("Digite um número válido!");
+                    }
+            break;
+            
+            case 104: System.out.println("01 - Cheeseburguer custa R$ 1,30, quantos você deseja?");
+                        unidadeCheeseBurguer += ler.nextInt();
+                        
+                        if(unidadeCheeseBurguer>0){
+                        resultadoCheeseBurguer = unidadeCheeseBurguer * valorCheeseBurguer;
+                    }
+                        else{
+                            System.out.println("Digite um número válido!");
+                        }
+            break;
+            
+            case 105: System.out.println("01 - Refrigerante custa R$ 1,00, quantos você deseja?");
+                        unidadeRefrigerante += ler.nextInt();
+                        
+                        if(unidadeRefrigerante>0){
+                        resultadoRefrigerante = unidadeRefrigerante * valorRefrigerante;
+                    }
+                        else{
+                            System.out.println("Digite um número válido!");
+                        }
+            break;
+            
+            default: System.out.println("Opção inválida! Tente novamente.");
+            
+        }  
+    }
+}
+        catch(InputMismatchException exception) {
+                System.out.println("Caracter inserido não compatível!" );
+                 continue;
+            }
+        }
+    }
+}
