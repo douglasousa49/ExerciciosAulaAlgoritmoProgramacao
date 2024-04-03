@@ -112,6 +112,9 @@ public class Exercicio06 {
                         if(unidadeCachorroQuente>0){
                         resultadoCachorroQuente = unidadeCachorroQuente * valorCachorroQuente;
                         }
+                        else{
+                              System.out.println("Digite um número válido!");
+                    }
             break;
            
             case 101: System.out.println("01 - Bauru Simples custa R$ 1,30, quantos você deseja?");
