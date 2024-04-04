@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.InputMismatchException;
-import java.util.Timer;
+
 
 public class Exercicio06 {
    
@@ -32,14 +32,15 @@ public class Exercicio06 {
         double resultadoCheeseBurguer = 0;
         double resultadoRefrigerante = 0;
         
-        double unidadeCachorroQuente = 0;
-        double unidadeBauruSimples = 0;
-        double unidadeBauruComOvo = 0;
-        double unidadeHamburguer = 0;
-        double unidadeCheeseBurguer = 0;
-        double unidadeRefrigerante = 0;
+        int unidadeCachorroQuente = 0;
+        int unidadeBauruSimples = 0;
+        int unidadeBauruComOvo = 0;
+        int unidadeHamburguer = 0;
+        int unidadeCheeseBurguer = 0;
+        int unidadeRefrigerante = 0;
         
-        double resultadoPedido = 0;
+        int resultadoPedido = 0;
+        int escolha = 0;
         
         boolean x = true;
        
@@ -58,8 +59,9 @@ public class Exercicio06 {
         System.out.println("Código (106) - Finalizar Pedido!");
         System.out.println();
         
-        
-        int escolha = ler.nextInt();
+        String entrada = ler.nextLine();
+    
+        escolha = Integer.parseInt(entrada);
         
         if (escolha == 106){
             
@@ -67,32 +69,32 @@ public class Exercicio06 {
             System.out.println();
             
             if(resultadoCachorroQuente>0){
-            System.out.printf("%.0f un - Cachorro Quente,", (unidadeCachorroQuente));
+            System.out.printf(unidadeCachorroQuente + " un - Cachorro Quente,");
             System.out.println(" no valor de " + brasilFormat.format(resultadoCachorroQuente));
             }
             
             if(resultadoBauruSimples>0){
-            System.out.printf("%.0f un - Bauru Simples,", (unidadeBauruSimples));
+            System.out.printf(unidadeBauruSimples + " un - Bauru Simples,");
             System.out.println(" no valor de " + brasilFormat.format(resultadoBauruSimples));
             }
             
             if(resultadoBauruComOvo>0){
-            System.out.printf("%.0f un - Bauru com Ovo,", (unidadeBauruComOvo));
+            System.out.printf(unidadeBauruComOvo + " un - Bauru com Ovo,");
             System.out.println(" no valor de " + brasilFormat.format(resultadoBauruComOvo));
             }
             
             if(resultadoHamburguer>0){
-            System.out.printf("%.0f un - Hambúrguer,", (unidadeHamburguer));
+            System.out.printf(unidadeHamburguer + " un - Hambúrguer,");
             System.out.println(" no valor de " + brasilFormat.format(resultadoHamburguer));
             }
             
             if(resultadoCheeseBurguer>0){
-            System.out.printf("%.0f un - Cheeseburguer,", (unidadeCheeseBurguer));
+            System.out.printf(unidadeCheeseBurguer + " un - Cheeseburguer,");
             System.out.println(" no valor de " + brasilFormat.format(resultadoCheeseBurguer));
             }
             
             if(resultadoRefrigerante>0){
-            System.out.printf("%.0f un - Refrigerante,", (unidadeRefrigerante));
+            System.out.printf(unidadeRefrigerante + " un - Refrigerante,");
             System.out.println(" no valor de " + brasilFormat.format(resultadoRefrigerante));
             }
             
@@ -107,7 +109,8 @@ public class Exercicio06 {
             switch(escolha){
             
             case 100: System.out.println("01 - Cachorro quente custa R$ 1,20, quantos você deseja?");
-                        unidadeCachorroQuente += ler.nextInt();
+                        String entradaUnidadeCachorroQuente = ler.nextLine();
+                        unidadeCachorroQuente += Integer.parseInt(entradaUnidadeCachorroQuente);
                         
                         if(unidadeCachorroQuente>0){
                         resultadoCachorroQuente = unidadeCachorroQuente * valorCachorroQuente;
@@ -116,9 +119,10 @@ public class Exercicio06 {
                               System.out.println("Digite um número válido!");
                     }
             break;
-           
+            
             case 101: System.out.println("01 - Bauru Simples custa R$ 1,30, quantos você deseja?");
-                        unidadeBauruSimples += ler.nextInt();
+                        String entradaUnidadeBauruSimples = ler.nextLine();
+                        unidadeBauruSimples += Integer.parseInt(entradaUnidadeBauruSimples);
                         
                         if(unidadeBauruSimples>0){
                         resultadoBauruSimples = unidadeBauruSimples * valorBauruSimples;
@@ -129,7 +133,8 @@ public class Exercicio06 {
             break;
            
             case 102: System.out.println("01 - Bauru com Ovo custa R$ 1,50, quantos você deseja?");
-                        unidadeBauruComOvo += ler.nextInt();
+                        String entradaUnidadeBauruComOvo = ler.nextLine();
+                        unidadeBauruComOvo += Integer.parseInt(entradaUnidadeBauruComOvo);
                         
                         if(unidadeBauruComOvo>0){
                         resultadoBauruComOvo = unidadeBauruComOvo * valorBauruComOvo;
@@ -140,7 +145,8 @@ public class Exercicio06 {
             break;
             
             case 103: System.out.println("01 - Hambúrguer custa R$ 1,20, quantos você deseja?");
-                        unidadeHamburguer += ler.nextInt();
+                        String entradaUnidadeHamburguer = ler.nextLine();
+                        unidadeHamburguer += Integer.parseInt(entradaUnidadeHamburguer);
                         
                         if(unidadeHamburguer>0){
                         resultadoHamburguer = unidadeHamburguer * valorHamburguer;
@@ -151,7 +157,8 @@ public class Exercicio06 {
             break;
             
             case 104: System.out.println("01 - Cheeseburguer custa R$ 1,30, quantos você deseja?");
-                        unidadeCheeseBurguer += ler.nextInt();
+                        String entradaUnidadeCheeseburguer = ler.nextLine();
+                        unidadeCheeseBurguer += Integer.parseInt(entradaUnidadeCheeseburguer);
                         
                         if(unidadeCheeseBurguer>0){
                         resultadoCheeseBurguer = unidadeCheeseBurguer * valorCheeseBurguer;
@@ -162,7 +169,8 @@ public class Exercicio06 {
             break;
             
             case 105: System.out.println("01 - Refrigerante custa R$ 1,00, quantos você deseja?");
-                        unidadeRefrigerante += ler.nextInt();
+                        String entradaUnidadeRefrigerante = ler.nextLine();
+                        unidadeRefrigerante += Integer.parseInt(entradaUnidadeRefrigerante);
                         
                         if(unidadeRefrigerante>0){
                         resultadoRefrigerante = unidadeRefrigerante * valorRefrigerante;
@@ -177,7 +185,7 @@ public class Exercicio06 {
         }  
     }
 }
-        catch(InputMismatchException exception) {
+        catch(NumberFormatException e) {
                 System.out.println("Caracter inserido não compatível!" );
                  continue;
             }
