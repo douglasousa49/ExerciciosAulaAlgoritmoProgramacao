@@ -42,6 +42,13 @@ public class Exercicio06 {
         int resultadoPedido = 0;
         int escolha = 0;
         
+        int entradaUnidadeCachorroQuente = 0;
+        int entradaUnidadeBauruSimples = 0;
+        int entradaUnidadeBauruComOvo = 0;
+        int entradaUnidadeHamburguer = 0;
+        int entradaUnidadeCheeseburguer = 0;
+        int entradaUnidadeRefrigerante = 0;
+        
         boolean x = true;
        
         while (x) {
@@ -109,76 +116,130 @@ public class Exercicio06 {
             switch(escolha){
             
             case 100: System.out.println("01 - Cachorro quente custa R$ 1,20, quantos você deseja?");
-                        String entradaUnidadeCachorroQuente = ler.nextLine();
-                        unidadeCachorroQuente += Integer.parseInt(entradaUnidadeCachorroQuente);
-                        
-                        if(unidadeCachorroQuente>0){
-                        resultadoCachorroQuente = unidadeCachorroQuente * valorCachorroQuente;
-                        }
-                        else{
-                              System.out.println("Digite um número válido!");
-                    }
-            break;
+        
+                do {
+                        String entradaCachorroQuente = ler.nextLine();
+                            try {
+                                    entradaUnidadeCachorroQuente = Integer.parseInt(entradaCachorroQuente);
+                                        if (entradaUnidadeCachorroQuente <= 0) {
+                                                System.out.println("Digite um número válido (positivo)!");
+                                            }
+        } catch (NumberFormatException e) {
+                    System.out.println("Digite um número válido!");
+                    entradaUnidadeCachorroQuente = -1; // Atribui um valor inválido para continuar no loop
+        }
+    }
+    while (entradaUnidadeCachorroQuente <= 0);
+        
+        unidadeCachorroQuente += entradaUnidadeCachorroQuente;
+        resultadoCachorroQuente = unidadeCachorroQuente * valorCachorroQuente;
+    
+break;
+            
             
             case 101: System.out.println("01 - Bauru Simples custa R$ 1,30, quantos você deseja?");
-                        String entradaUnidadeBauruSimples = ler.nextLine();
-                        unidadeBauruSimples += Integer.parseInt(entradaUnidadeBauruSimples);
-                        
-                        if(unidadeBauruSimples>0){
-                        resultadoBauruSimples = unidadeBauruSimples * valorBauruSimples;
-                    }
-                        else{
-                              System.out.println("Digite um número válido!");
-                    }
-            break;
+    
+                do {
+                        String entradaBauruSimples = ler.nextLine();
+                            try {
+                                    entradaUnidadeBauruSimples = Integer.parseInt(entradaBauruSimples);
+                                        if (entradaUnidadeBauruSimples <= 0) {
+                                                System.out.println("Digite um número válido (positivo)!");
+                                            }
+        } catch (NumberFormatException e) {
+                    System.out.println("Digite um número válido!");
+                    entradaUnidadeBauruSimples = -1; // Atribui um valor inválido para continuar no loop
+        }
+    } while (entradaUnidadeBauruSimples <= 0);
+    
+        unidadeBauruSimples += entradaUnidadeBauruSimples;
+        resultadoBauruSimples = unidadeBauruSimples * valorBauruSimples;
+    
+break;
            
             case 102: System.out.println("01 - Bauru com Ovo custa R$ 1,50, quantos você deseja?");
-                        String entradaUnidadeBauruComOvo = ler.nextLine();
-                        unidadeBauruComOvo += Integer.parseInt(entradaUnidadeBauruComOvo);
-                        
-                        if(unidadeBauruComOvo>0){
-                        resultadoBauruComOvo = unidadeBauruComOvo * valorBauruComOvo;
-                    }
-                        else{
-                            System.out.println("Digite um número válido!");
-                    }
-            break;
+        
+                do {
+                        String entradaBauruComOvo = ler.nextLine();
+                            try {
+                                    entradaUnidadeBauruComOvo = Integer.parseInt(entradaBauruComOvo);
+                                        if (entradaUnidadeBauruComOvo <= 0) {
+                                                System.out.println("Digite um número válido (positivo)!");
+                                            }
+        } catch (NumberFormatException e) {
+                    System.out.println("Digite um número válido!");
+                    entradaUnidadeBauruComOvo = -1; // Atribui um valor inválido para continuar no loop
+        }
+    } while (entradaUnidadeBauruComOvo <= 0);
+    
+        unidadeBauruComOvo += entradaUnidadeBauruComOvo;
+        resultadoBauruComOvo = unidadeBauruComOvo * valorBauruComOvo;
+    
+break;
             
             case 103: System.out.println("01 - Hambúrguer custa R$ 1,20, quantos você deseja?");
-                        String entradaUnidadeHamburguer = ler.nextLine();
-                        unidadeHamburguer += Integer.parseInt(entradaUnidadeHamburguer);
-                        
-                        if(unidadeHamburguer>0){
-                        resultadoHamburguer = unidadeHamburguer * valorHamburguer;
-                    }
-                        else{
-                            System.out.println("Digite um número válido!");
-                    }
-            break;
-            
+        
+                do {
+                        String entradaHamburguer = ler.nextLine();
+                            try {
+                                    entradaUnidadeHamburguer = Integer.parseInt(entradaHamburguer);
+                                        if (entradaUnidadeHamburguer <= 0) {
+                                                System.out.println("Digite um número válido (positivo)!");
+                                            }
+        } catch (NumberFormatException e) {
+                    System.out.println("Digite um número válido!");
+                    entradaUnidadeHamburguer = -1; // Atribui um valor inválido para continuar no loop
+        }
+    } while (entradaUnidadeHamburguer <= 0);
+    
+        unidadeHamburguer += entradaUnidadeHamburguer;
+        resultadoHamburguer = unidadeHamburguer * valorHamburguer;
+    
+break;
+
             case 104: System.out.println("01 - Cheeseburguer custa R$ 1,30, quantos você deseja?");
-                        String entradaUnidadeCheeseburguer = ler.nextLine();
-                        unidadeCheeseBurguer += Integer.parseInt(entradaUnidadeCheeseburguer);
-                        
-                        if(unidadeCheeseBurguer>0){
-                        resultadoCheeseBurguer = unidadeCheeseBurguer * valorCheeseBurguer;
-                    }
-                        else{
-                            System.out.println("Digite um número válido!");
-                        }
-            break;
+        
+                do {
+                        String entradaCheesegurguer = ler.nextLine();
+                            try {
+                                    entradaUnidadeCheeseburguer = Integer.parseInt(entradaCheesegurguer);
+                                        if (entradaUnidadeCheeseburguer <= 0) {
+                                                System.out.println("Digite um número válido (positivo)!");
+                                            }
+        } catch (NumberFormatException e) {
+                    System.out.println("Digite um número válido!");
+                    entradaUnidadeCheeseburguer = -1; // Atribui um valor inválido para continuar no loop
+        }
+    }
+    while (entradaUnidadeCheeseburguer <= 0);
+        
+        unidadeCheeseBurguer += entradaUnidadeCheeseburguer;
+        resultadoCheeseBurguer = unidadeCheeseBurguer * valorCheeseBurguer;
+    
+break;
+
+
             
             case 105: System.out.println("01 - Refrigerante custa R$ 1,00, quantos você deseja?");
-                        String entradaUnidadeRefrigerante = ler.nextLine();
-                        unidadeRefrigerante += Integer.parseInt(entradaUnidadeRefrigerante);
-                        
-                        if(unidadeRefrigerante>0){
-                        resultadoRefrigerante = unidadeRefrigerante * valorRefrigerante;
-                    }
-                        else{
-                            System.out.println("Digite um número válido!");
-                        }
-            break;
+        
+                do {
+                        String entradaRefrigerante = ler.nextLine();
+                            try {
+                                    entradaUnidadeRefrigerante = Integer.parseInt(entradaRefrigerante);
+                                        if (entradaUnidadeRefrigerante <= 0) {
+                                                System.out.println("Digite um número válido (positivo)!");
+                                            }
+        } catch (NumberFormatException e) {
+                    System.out.println("Digite um número válido!");
+                    entradaUnidadeRefrigerante = -1; // Atribui um valor inválido para continuar no loop
+        }
+    }
+    while (entradaUnidadeRefrigerante <= 0);
+        
+        unidadeRefrigerante += entradaUnidadeRefrigerante;
+        resultadoRefrigerante = unidadeRefrigerante * valorRefrigerante;
+    
+break;
             
             default: System.out.println("Opção inválida! Tente novamente.");
             
